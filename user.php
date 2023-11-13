@@ -78,8 +78,8 @@ if(isset($_GET['id'])){
         class="container-fluid container-xl d-flex align-items-center justify-content-between"
       >
         <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/logo.png" alt="" />
-          <span>FLyHigh</span>
+      
+          <span>SkyShark</span>
         </a>
 
         <nav id="navbar" class="navbar">
@@ -105,24 +105,24 @@ if(isset($_GET['id'])){
       <div class="form-group">
         <h1 class="display-2">Contact Form</h1>
         <h1 for="name" type="text" name="name" class="">Name</h1>
-        <input name="name" placeholder="Enter your name" type="text" name="name" id="name" class="form-control" value="<?php echo isset($name)?$name:null ?>" required>
+        <input name="name" autocomplete="off" placeholder="Enter your name" type="text" name="name" id="name" class="form-control" value="<?php echo isset($name)?$name:null ?>" required>
       </div>
 
       <div class="form-group">
         <h1 for="email" type="email" name="email" class="">Email</h1>
-        <input name="email" placeholder="Enter your email" type="email" name="email" id="email" class="form-control" value="<?php echo isset($email)?$email:null ?>" required>
+        <input name="email" autocomplete="off" placeholder="Enter your email" type="email" name="email" id="email" class="form-control" value="<?php echo isset($email)?$email:null ?>" required>
       </div>
 
       <div class="form-group">
         <h1 for="phone" type="text" name="phone" class="">Mobile</h1>
-        <input name="mobile" placeholder="Enter your phone number" type="tel" id="name" class="form-control" value="<?php echo isset($mobile)?$mobile:null ?>" required>
+        <input name="mobile" autocomplete="off" placeholder="Enter your phone number" type="tel" id="name" class="form-control" value="<?php echo isset($mobile)?$mobile:null ?>" required>
       </div>
 
       
 
       <div class="form-group">
         <h1 for="password" type="text" name="password" class="">Password</h1>
-         <input  for="password" type="password" name="password" placeholder="Enter your password" type="tel" id="name" class="form-control" value="<?php echo isset($password)?$password:null ?>" required>
+         <input  for="password" autocomplete="off" type="password" name="password" placeholder="Enter your password" type="tel" id="name" class="form-control" value="<?php echo isset($password)?$password:null ?>" required>
       </div>
 
       <button name="submit" type="submit" class="btn btn-primary px-5 py-3"><h5><?php echo isset($id)?'Update':'Submit' ?></h5></button>
