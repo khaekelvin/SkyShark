@@ -46,8 +46,8 @@ if(isset($_GET['id'])){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <link href="assets/css/style.css" rel="stylesheet" />
-          <link href="assets/img/favicon.png" rel="icon" />
+      <link href="assets/css//style.css" rel="stylesheet" />
+          
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <link
@@ -78,7 +78,6 @@ if(isset($_GET['id'])){
         class="container-fluid container-xl d-flex align-items-center justify-content-between"
       >
         <a href="index.html" class="logo d-flex align-items-center">
-      
           <span>SkyShark</span>
         </a>
 
@@ -88,7 +87,7 @@ if(isset($_GET['id'])){
             <li><a class="nav-link scrollto" href="http://localhost/flexstart/index.html">About</a></li>
             <li><a class="nav-link scrollto" href="http://localhost/flexstart/index.html">Services</a></li>
 
-            <li><a class="nav-link scrollto" href="http://localhost/flexstart/index.html">Contact</a></li>
+            
             
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -103,26 +102,26 @@ if(isset($_GET['id'])){
   
     <form method="POST" class="mt-5">
       <div class="form-group">
-        <h1 class="display-2">Contact Form</h1>
+        <h1 class="display-2">Sign up</h1>
         <h1 for="name" type="text" name="name" class="">Name</h1>
-        <input name="name" autocomplete="off" placeholder="Enter your name" type="text" name="name" id="name" class="form-control" value="<?php echo isset($name)?$name:null ?>" required>
+        <input autocomplete="off" name="name" placeholder="Enter your name" type="text" name="name" id="name" class="form-control" value="<?php echo isset($name)?$name:null ?>" required>
       </div>
 
       <div class="form-group">
         <h1 for="email" type="email" name="email" class="">Email</h1>
-        <input name="email" autocomplete="off" placeholder="Enter your email" type="email" name="email" id="email" class="form-control" value="<?php echo isset($email)?$email:null ?>" required>
+        <input autocomplete="off" name="email" placeholder="Enter your email" type="email" name="email" id="email" class="form-control" value="<?php echo isset($email)?$email:null ?>" required>
       </div>
 
       <div class="form-group">
         <h1 for="phone" type="text" name="phone" class="">Mobile</h1>
-        <input name="mobile" autocomplete="off" placeholder="Enter your phone number" type="tel" id="name" class="form-control" value="<?php echo isset($mobile)?$mobile:null ?>" required>
+        <input autocomplete="off" name="mobile" placeholder="Enter your phone number" type="tel" id="name" class="form-control" value="<?php echo isset($mobile)?$mobile:null ?>" required>
       </div>
 
       
 
       <div class="form-group">
         <h1 for="password" type="text" name="password" class="">Password</h1>
-         <input  for="password" autocomplete="off" type="password" name="password" placeholder="Enter your password" type="tel" id="name" class="form-control" value="<?php echo isset($password)?$password:null ?>" required>
+         <input autocomplete="off"  for="password" type="password" name="password" placeholder="Enter your password" type="tel" id="name" class="form-control" value="<?php echo isset($password)?$password:null ?>" required>
       </div>
 
       <button name="submit" type="submit" class="btn btn-primary px-5 py-3"><h5><?php echo isset($id)?'Update':'Submit' ?></h5></button>

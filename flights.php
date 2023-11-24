@@ -38,9 +38,9 @@ include 'connect.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Management</title>
+    <title>Reservations</title>
     <link href="assets/css/style.css" rel="stylesheet" />
-    
+    <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
@@ -67,7 +67,7 @@ include 'connect.php'
             <li><a class="nav-link scrollto" href="http://localhost/flexstart/index.html">About</a></li>
             <li><a class="nav-link scrollto" href="http://localhost/flexstart/index.html">Services</a></li>
 
-            
+            <li><a class="nav-link scrollto" href="http://localhost/flexstart/index.html">Contact</a></li>
             
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -77,7 +77,7 @@ include 'connect.php'
     </header>
     <!-- End Header -->
     <div class="container">
-        <h1 class="header mb-2">Users</h1>
+        <h1 class="header mb-2">Reservations</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -85,14 +85,15 @@ include 'connect.php'
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile</th>
-                    <th>Password</th>
-                    <th>Action</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Charge</th>
                 </tr>
             </thead>
             <tbody>
 
             <?php
-            $sql="Select * from `crudtable`";
+            $sql="Select * from `reserve`";
             $result = mysqli_query($con,$sql);
             if($result){
                 while($row=mysqli_fetch_assoc($result)){
@@ -100,17 +101,40 @@ include 'connect.php'
                     $name=$row['name'];
                     $email=$row['email'];
                     $mobile=$row['mobile'];
-                    $password=$row['password'];
+                    $from=$row['from'];
+                    $to=$row['to'];
+                    $charge=$row['charge'];
+                    $price = '';
+                    
+                    switch($charge){
+                      case 'Basic' :
+                        $price = '100';
+                        break;
+                        case 'Premium' :
+                        $price = '200';
+                        break;
+                        case 'Enhanced' :
+                        $price = '300';
+                        break;
+                        case 'Ultimate' :
+                        $price = '500';
+                        break;
+                        default :
+                        $price = '100';
+                        break;
+                    }
                     echo '<tr>
                     <td scope="row">'.$id.'</td>
                     <td>'.$name.'</td>
                     <td>'.$email.'</td>
                     <td>'.$mobile.'</td>
-                    <td>'.$password.'</td>
+                    <td>'.$from.'</td>
+                    <td>'.$to.'</td>
+                    <td>₵ '.$price.'</td>
 
                     <td>
-                <button class="btn btn-primary"><a href="user.php?id='.$id.'" class="text-light">Update</a></button>
-                <button class="btn btn-danger"><a href="delete.php?id='.$id.'" class="text-light">Delete</a></button>
+                <button class="btn btn-primary"><a href="reserve.php?id='.$id.'" class="text-light">Update</a></button>
+                <button class="btn btn-danger"><a href="delete2.php?id='.$id.'" class="text-light">Delete</a></button>
               </td>  
                     </tr>';
                     
@@ -120,8 +144,8 @@ include 'connect.php'
                
             </tbody>
         </table>
-        <a href="user.php"><button class="btn btn-success">Add New User</button></a>
-        <a href="reserve.php"><button class="btn btn-primary">Make a reservation</button></a>
+        <a href="index.html"><button class="btn btn-success">Home</button></a>
+        
 
     </div>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

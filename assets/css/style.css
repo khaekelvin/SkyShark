@@ -2417,3 +2417,7 @@ section {
   font-size: 13px;
   color: #012970;
 }
+
+.form-control {
+  font-size: 1.5rem !important;
+}
