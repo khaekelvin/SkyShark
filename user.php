@@ -1,3 +1,4 @@
+<!-- beginning of php code -->
 <?php
   include 'connect.php';
   if(isset($_POST['submit'])){
@@ -30,7 +31,7 @@ if(isset($_GET['id'])){
 }
 ?>
 
-
+<!-- end of php code -->
 
 
 
@@ -72,7 +73,6 @@ if(isset($_GET['id'])){
   <title>form</title>
 </head>
 <body>
-  <!-- ======= Header ======= -->
     <header id="header" class="header ">
       <div
         class="container-fluid container-xl d-flex align-items-center justify-content-between"
@@ -92,10 +92,8 @@ if(isset($_GET['id'])){
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
-        <!-- .navbar -->
       </div>
     </header>
-    <!-- End Header -->
 
   <div class="container">
 
@@ -125,7 +123,7 @@ if(isset($_GET['id'])){
       </div>
 
       <button name="submit" type="submit" class="btn btn-primary px-5 py-3"><h5><?php echo isset($id)?'Update':'Submit' ?></h5></button>
-      <!-- <button class="btn btn-danger ">Clear</button> -->
+      
       </div>
     </form>
   </div>
